@@ -22,6 +22,7 @@
   <issue>https://github.com/EddyVerbruggen/Custom-URL-scheme/issues</issue>
 
   <preference name="URL_SCHEME" />
+  <preference name="URL_HOST" />
 
   <engines>
     <engine name="cordova" version=">=3.0.0"/>
@@ -65,10 +66,28 @@
 
     <config-file target="AndroidManifest.xml" parent="/*/application/activity">
       <intent-filter>
-        <data android:scheme="$URL_SCHEME"/>
+        <data android:scheme="$URL_SCHEME" />
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
+      </intent-filter>
+      <intent-filter>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:host="$URL_HOST" android:scheme="http" />
+      </intent-filter>
+      <intent-filter>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:host="$URL_HOST" android:scheme="http" android:path="/" />
+      </intent-filter>
+      <intent-filter>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:host="$URL_HOST" android:scheme="http" android:path="/index.html" />
       </intent-filter>
     </config-file>
   </platform>
