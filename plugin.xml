@@ -48,8 +48,6 @@
 
   <!-- android -->
   <platform name="android">
-    
-    <preference name="AndroidLaunchMode" value="singleTask" />
 
     <config-file target="AndroidManifest.xml" parent="/*/application/activity">
       <intent-filter>
