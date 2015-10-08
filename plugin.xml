@@ -52,6 +52,9 @@
 
   <!-- android -->
   <platform name="android">
+    
+    <preference name="AndroidLaunchMode" value="singleTask" />
+    
     <js-module src="www/android/LaunchMyApp.js" name="LaunchMyApp">
       <clobbers target="window.plugins.launchmyapp" />
     </js-module>
